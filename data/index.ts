@@ -1,0 +1,1 @@
+export {countryAttrs} from './countryAttrs';

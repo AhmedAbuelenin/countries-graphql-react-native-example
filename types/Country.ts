@@ -1,4 +1,4 @@
-import {Continent, Language} from './index';
+import {Continent, Language, State, Subdivision} from './index';
 
 export type Country = {
   awsRegion: string;
@@ -13,11 +13,19 @@ export type Country = {
   name: string;
   native: string;
   phone: string;
-  // phones: [string]
-  // states: [State]
-  // subdivisions: [Subdivisions]
+  phones: [string];
+  states: [State];
+  subdivisions: [Subdivision];
 };
 
 export type CountryIndexed = {
-  [key: string]: string;
+  [key: string]: Country[keyof Omit<
+    Country,
+    | 'continent'
+    | 'currencies'
+    | 'languages'
+    | 'phones'
+    | 'states'
+    | 'subdivisions'
+  >];
 };

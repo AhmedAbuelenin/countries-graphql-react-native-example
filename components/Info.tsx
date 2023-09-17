@@ -5,7 +5,10 @@ import {Country} from '../types';
 
 interface IInfoProps {
   title: string;
-  value: Country[keyof Omit<Country, 'continent' | 'currencies' | 'languages'>];
+  value: Country[keyof Omit<
+    Country,
+    'continent' | 'currencies' | 'languages' | 'subdivisions' | 'states'
+  >];
 }
 
 const Info = ({title, value}: IInfoProps) => {
